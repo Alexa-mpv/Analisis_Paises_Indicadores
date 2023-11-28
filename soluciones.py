@@ -31,7 +31,7 @@ indicadores = [
 ]
 
 # Años
-nomcolumn = [
+year = [
     "2000",
     "2001",
     "2002",
@@ -74,7 +74,7 @@ for pais in paises:
         )
         plt.figure(figsize=(12, 8))
         plt.title(f"{indicador} {pais}")
-        plt.plot(nomcolumn, datos_pais)
+        plt.plot(year, datos_pais)
         plt.xlabel("Año")  # etiqueta del eje x.
         plt.ylabel("Valor")  # etiqueta del eje y.
         plt.grid()  # agregar cuadrícula.
@@ -121,11 +121,11 @@ for pais in paises:
         # 5) El país con el mínimo y el máximo de cada indicador junto con el año, a partir de las gráficas del punto 3.
         min_value = datos_indicador.min()
         max_value = datos_indicador.max()
-        year_min = nomcolumn[np.argmin(datos_indicador)]
-        year_max = nomcolumn[np.argmax(datos_indicador)]
+        year_min = year[np.argmin(datos_indicador)]
+        year_max = year[np.argmax(datos_indicador)]
 
         plt.plot(
-            nomcolumn,
+            year,
             datos_indicador,
             label=f"{indicador} - {descr_indicador}\nMínimo: {min_value} ({year_min})\nMáximo: {max_value} ({year_max})",
         )  # graficar los datos.
